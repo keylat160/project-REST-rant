@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
     res.render('Home')
 })
 
+
 app.get('*', (req, res) => {
     res.render('error404')
 })
