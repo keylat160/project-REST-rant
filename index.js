@@ -8,7 +8,8 @@ app.engine('jsx', require ('express-react-views').createEngine() )
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-    res.render('Home')
+    res.send('Hello Rest-Rant World!');
+    res.render('Home');
 })
 
 
@@ -18,6 +19,6 @@ app.get('*', (req, res) => {
 
 
 app.listen(process.env.PORT, () => {
-    console.log(`Server is running at http://localhost:${3000}`);
+    console.log(`Server is running at http://localhost:${3001}`);
 })
 
