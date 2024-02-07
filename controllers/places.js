@@ -5,7 +5,8 @@ const render = require('../render');
 
 router.get('/', (req, res) => {
     res.send('GET places list');
-    res.send(render('Index', { places: places }));
+    res.render('Index', { places: places});
 });
+ 
 
 module.exports = router;
