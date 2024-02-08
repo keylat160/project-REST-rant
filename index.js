@@ -1,6 +1,10 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const render = require('./render');
+
+//MIDDLEWARE
+app.use(express.static('public'));
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require ('express-react-views').createEngine() )
