@@ -1,5 +1,5 @@
 const React = require('react');
-const Default = require('./layout/default');
+const Default = require('../layout/default');
 
 const home = () => {
     return (

@@ -5,24 +5,27 @@ const render = require('./render');
 
 //MIDDLEWARE
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require ('express-react-views').createEngine() )
 
-app.use('/places', require('./controllers/places'))
+//load the places controller
+app.use('/places', require('./controllers/places'));
 
 app.get('/', (req, res) => {
-    res.send('Hello Rest-Rant World!');
-    res.render('Home');
-})
+    //res.send('Hello Rest-Rant World!');
+    res.send('Home');
+});
 
-
+//wildcard/404 route
 app.get('*', (req, res) => {
-    res.render('error404')
-})
+    console.log('user requested unknown route: ', req.url);
+    res.status(404).send(render('Error404'));
+});
 
 
 app.listen(process.env.PORT, () => {
-    console.log(`Server is running at http://localhost:${3001}`);
-})
+    console.log(`Server is running at http://localhost:${process.env.PORT}`);
+});
 

@@ -7,7 +7,7 @@
         cuisines:'Thai, Pan-Asian',
         pic: 'https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     }, {
-        name: 'Coffee with shapes',
+        name: ' Coding Coffee',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'Coffee, Bakery',

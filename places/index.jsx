@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('./Default')
+const Default = require('../layout/Default')
 
 function index (data) {
     let placesFormatted = date.places.map((place) => {
