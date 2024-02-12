@@ -1,5 +1,5 @@
 const React = require('react')
-const Default = require('../views/default')
+const Default = require('./default')
 
 function error404 () {
     return (
@@ -12,4 +12,4 @@ function error404 () {
     )
 }
 
-module.exports = error404
+module.exports = error404;

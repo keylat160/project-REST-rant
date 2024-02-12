@@ -10,13 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'jsx')
 app.engine('jsx', require ('express-react-views').createEngine() )
 
+app.get('/', (req, res) => {
+    //res.send('Hello Rest-Rant World!');
+    res.send(render('Home'));
+});
+
 //load the places controller
 app.use('/places', require('./controllers/places'));
 
-app.get('/', (req, res) => {
-    //res.send('Hello Rest-Rant World!');
-    res.send('Home');
-});
 
 //wildcard/404 route
 app.get('*', (req, res) => {
