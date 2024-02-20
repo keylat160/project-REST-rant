@@ -1,12 +1,12 @@
 const React = require('react')
-const Default = require('../default')
+const Default = require('../layout/Default')
 
 function new_form () {
     return (
         <Default>
             <main>
                 <h1>Add a New Place</h1>
-                <form method="POST" action="/places">
+                <form action='/places' method='POST'>
                     <div className="form-group">
                         <label html For="name">Place Name</label>
                         <input className="form-control" id="name" name="name"/>

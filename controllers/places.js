@@ -29,19 +29,53 @@ router.get('/', (req, res) => {
 });
 
 //GET Details of a place
-router.get("/:id/edit", (req, res) => {
+router.get('/:id/edit', (req, res) => {
     let id = number(req.params.id);
     if (isNaN(id)) {
-        res.status(404).render("error404");
+        res.status(404).render('error404');
       } else if (!places[id]) {
-        res.status(404).render("error404");
+        res.status(404).render('error404');
       } else {
         res.render(`places/${id}`);
       }
 })
  //Update a Place
  router.get('/:id/edit', (req, res) => {
-    
- })
+    let id = Number(req.params.id);
+    if(isNaN(id)) {
+        res.render('error404')
+      }
+       else if (!places[id]) {
+        res.render('error404')
+      } 
+      else {
+        res.render('places/Edit', { place: places[id] });
+      }
+ });
+
+ router.put('/:id', (req, res) => {
+    const id = Number(req.params.id);
+    if (isNaN(id)) {
+        res.status(400).send(render('Error404'));
+    } else if (!places[id]) {
+        res.status(400).send(render('Error404'));
+    } else {
+        places[id] = { ...req.body };
+        res.redirect(`/places/${id}`);
+    }
+ });
+
+ //Delete a Place
+ router.delete('/:id', (req, res) => {
+    const id = Number(req.params.id);
+    if (isNaN(id)) {
+        res.status(400).send(render('Error404'));
+    } else if (!places[id]) {
+        res.status(400).send(render('Error404'));
+    } else {
+        places.splice(id, 1);
+        res.redirect('/places');
+    }
+ });
 
 module.exports = router;

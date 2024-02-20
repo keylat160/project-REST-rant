@@ -7,11 +7,13 @@ h1 {
     color: cornflowerblue;
 }
 img {
-    
+    display: block;
+    width: 600px;
+    max-width: 100%;
+    margin: 15px auto;
 }
 main {
     max-width: 100%;
-    padding: 0 15px;
     padding: 0 20px 40px;
     background-color: #FFF
 }

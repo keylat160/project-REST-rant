@@ -2,7 +2,7 @@ const React = require('react')
 const Default = require('../layout/Default')
 
 function index (data) {
-    let placesFormatted = date.places.map((place) => {
+    let placesFormatted = data.places.map((place) => {
         return (
             <div>
                 <h2>{place.name}</h2>
@@ -18,6 +18,6 @@ function index (data) {
             </Default>
     )
 }
-  
+module.exports = index;
   
   

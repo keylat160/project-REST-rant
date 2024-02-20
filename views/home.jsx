@@ -1,5 +1,5 @@
 const React = require('react');
-const Default = require('./default');
+const Default = require('./layout/Default');
 
 const home = () => {
     return (
@@ -7,7 +7,8 @@ const home = () => {
             <main>
            <h1>Home</h1>
                <div>
-                <img src='/images/chia-fruit-drink.jpg' alt='Chia Fruit Shake' />
+                <img src='https://images.pexels.com/photos/7937485/pexels-photo-7937485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' 
+                alt='Fruit Shakes on pexels' />
                </div>
                <a href='/places'>
                 <button className='btn-primary'>Places Page</button>
