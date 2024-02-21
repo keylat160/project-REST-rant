@@ -6,6 +6,7 @@ const render = require('./render');
 //MIDDLEWARE
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require ('express-react-views').createEngine() )
