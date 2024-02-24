@@ -2,18 +2,18 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const render = require('./render');
+const methodOverride = require('method-override');
 
 //MIDDLEWARE
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-app.set('view engine', 'jsx')
-app.engine('jsx', require ('express-react-views').createEngine() )
+//app.set('view engine', 'jsx')
+//app.engine('jsx', require ('express-react-views').createEngine() )
 
 app.get('/', (req, res) => {
-    //res.send('Hello Rest-Rant World!');
-    res.send(render('Home'));
+ res.send(render('Home'));
 });
 
 //load the places controller
