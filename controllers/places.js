@@ -1,12 +1,12 @@
 const express = require('express');
-const router = require('express').Router();
+const router = express.Router();
 const render = require('../render');
 const db = require('../models');
 
 
 // Create a new Place
 router.get('/new', (req, res) => {
-    res.send(render('places/New'));
+    res.send(render('places/new'));
 });
 
 router.post('/', (req, res) => {
@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
         .populate('comments')
         .then((place) => {
-            res.send(render('places/Show', { place }));
+            res.send(render('places/show', { place }));
         })
         .catch((err) => {
             console.log(err);
