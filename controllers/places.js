@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const render = require('../render');
 const db = require('../models');
-const comment = require('../models/comment')
+const comment = require('../models/comments')
 
 // Create a new Place
 router.get('/new', (req, res) => {

@@ -1,7 +1,7 @@
-const React = require('react')
-const Default = require('./layout/Default')
+const React = require('react');
+const Default = require('./layouts/Default');
 
-function error404 () {
+const Error404 = () => {
     return (
         <Default>
             <main>
@@ -10,7 +10,7 @@ function error404 () {
                 <p>Oops, sorry, we can't find this page!</p>
             </main>
         </Default>
-    )
-}
+    );
+};
 
-module.exports = error404;
+module.exports = Error404;

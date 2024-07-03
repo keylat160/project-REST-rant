@@ -1,42 +1,58 @@
-const React = require('react')
-const Default = require('../layout/Default')
+const React = require('react');
+const Default = require('../layouts/Default');
 
-function new_form () {
+const New = () => {
     return (
         <Default>
             <main>
                 <h1>Add a New Place</h1>
                 <form action='/places' method='POST'>
-                    <div className="form-group">
-                        <label html For="name">Place Name</label>
-                        <input className="form-control" id="name" name="name"/>
+                    <div className='mb-3'>
+                        <label htmlFor='name'>Place Name</label>
+                        <input type='text' name='name' id='name' className='form-control' />
                     </div>
-                    <div className="form-group">
-                        <label html For="pic">Place Picture</label>
-                        <input className="form-control" id="pic" name="pic"/>
-                    </div>
-                    <div className="form-group">
-                        <label html For="city">City</label>
-                        <input className="form-control" id="city" name="city"/>
-                    </div>
-                    <div className="form-group">
-                        <label html For="state">State</label>
-                        <input className="form-control" id="state" name="state"/>
-                    </div>
-                    <div className="form-group">
-                        <label html For="cuisines">Cuisines</label>
-                        <input className="form-control" id="cuisines" name="cuisines" required/>
-                    </div>
-                    <div className="form-group">
-                        <label for="founded">Founded Year</label>
-                         <input className="form-control" id="founded" name="founded" defaultValue={new Date() .getFullYear()} />
-                       </div>
 
-                    <input className="btn btn-primary" type="submit" value="Add Place" />
+                    <div className='mb-3'>
+                        <label htmlFor='pic'>Place Picture</label>
+                        <input type='url' name='pic' id='pic' className='form-control' />
+                    </div>
+                    <div className='mb-3'>
+                        <label htmlFor='city'>City</label>
+                        <input type='text' name='city' id='city' className='form-control' />
+                    </div>
+                    <div className='mb-3'>
+                        <label htmlFor='state'>State</label>
+                        <input type='text' name='state' id='state' className='form-control' />
+                    </div>
+                    <div className='mb-3'>
+                        <label htmlFor='cuisines'>Cuisines</label>
+                        <input
+                            type='text'
+                            name='cuisines'
+                            id='cuisines'
+                            className='form-control'
+                            required
+                        />
+                    </div>
+                    <div className='mb-3'>
+                        <label htmlFor='founded'>Year Founded</label>
+                        <input
+                            type='number'
+                            name='founded'
+                            id='founded'
+                            className='form-control'
+                            defaultValue={new Date().getFullYear()}
+                        />
+                    </div>
+                    <div className='mb-3'>
+                        <button type='submit' className='btn btn-primary'>
+                            <i className='bi bi-plus-circle-fill'></i> Add Place
+                        </button>
+                    </div>
                 </form>
             </main>
         </Default>
-    )
-}
+    );
+};
 
-module.exports = new_form;
+module.exports = New;

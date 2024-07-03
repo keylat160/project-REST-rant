@@ -1,7 +1,7 @@
 const React = require('react');
-const Default = require('..layout/Default');
+const Default = require('..layouts/Default');
 
-const show = ({ place }) => {
+const Show = ({ place }) => {
   // cuisines is comma separated string, E.g. "Italian, Chinese, Mexican"
   const cuisinesBadges = place.cuisines.split(',').map((cuisine) => {
     return (
@@ -66,8 +66,8 @@ return (
             </div>
         </main>
     </Default>
-);
-}
+ );
+};
     
 
-module.exports = show
+module.exports = Show;

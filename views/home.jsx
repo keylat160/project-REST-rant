@@ -1,7 +1,7 @@
 const React = require('react');
-const Default = require('./layout/Default');
+const Default = require('./layouts/Default');
 
-const home = () => {
+const Home = () => {
     return (
         <Default>
             <main>
@@ -18,4 +18,4 @@ const home = () => {
     );
 };
 
-module.exports = home;
+module.exports = Home;

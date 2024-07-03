@@ -8,6 +8,5 @@ const commentSchema = new mongoose.Schema({
     content: { type: String, default: '' },
 });
 
-mongoose.model('comment',commentSchema);
 
 module.exports = mongoose.model('Comment', commentSchema);
